@@ -2,7 +2,7 @@ def murmurhash32(key, seed=0):
     m = 0x5bd1e995
     r = 24
     h = seed ^ len(key)
-    data = bytearray(key)
+    data = bytearray(key, "utf-8")
 
     while len(data) >= 4:
         k = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24)
