@@ -1,9 +1,11 @@
+import struct
+
 def murmurhash128(key, seed=0):
     m = 0x5bd1e9955bd1e9955bd1e9955bd1e995
     r = 31
     h1 = seed
     h2 = seed
-    data = bytearray(key)
+    data = bytearray(key, "utf-8")
 
     def get_uint64(data, index):
         return ((data[index+7] << 56) | (data[index+6] << 48) | (data[index+5] << 40) |
