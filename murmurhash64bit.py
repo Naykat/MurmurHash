@@ -2,7 +2,7 @@ def murmurhash64(key, seed=0):
     m = 0xc6a4a7935bd1e995
     r = 47
     h = seed ^ (len(key) * m)
-    data = bytearray(key)
+    data = bytearray(key, "utf-8")
 
     def get_uint64(data, index):
         return ((data[index+7] << 56) | (data[index+6] << 48) | (data[index+5] << 40) |
